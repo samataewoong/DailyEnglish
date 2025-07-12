@@ -35,7 +35,7 @@ export default function MainPage() {
     return (
         <>
             <div className="mainContainer">
-                <div className="mainHeader">Daily English Practive</div>
+                <div className="mainHeader">Daily English Practice</div>
                 <div className="mainBody">
                     <b onClick={openCalender}>view Calendar</b>
                     {viewCalender && (
