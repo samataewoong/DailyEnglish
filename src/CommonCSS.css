@@ -1,65 +1,91 @@
 .mainContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;       /* 가로 중앙 */
+    justify-content: space-between; /* 위아래 공간 균등 분배 */
     width: 100vw;
-    height: 100vw;
+    height: 100vh;
     text-align: center;
-    align-content: center;
+    padding: 20px;             /* 여백 추가 */
+    box-sizing: border-box;    /* 패딩 포함 크기 계산 */
 }
 
 .mainHeader {
     width: 100%;
-    height: 5%;
+    height: 5vh;
     text-align: center;
-    align-content: center;
     font-weight: 700;
     font-size: xxx-large;
+    margin-bottom: 10px;       /* 제목 아래 여백 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainHeader .title {
+    /* 메인 제목 */
+}
+
+.mainHeader .subTitle {
+    font-weight: 600;
+    font-size: medium;
+    margin-top: 4px;
+    user-select: none;
+}
+
+.viewCalendarToggle {
+    margin-bottom: 20px;       /* 캘린더 토글 버튼 아래 여백 */
+    cursor: pointer;
+    font-weight: 600;
 }
 
 .mainBody {
     width: 100%;
-    height: 70%;
+    height: 70vh;
     text-align: center;
+    overflow-y: auto;          /* 내용 넘칠 시 스크롤 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;              /* 남은 공간 모두 차지 */
 }
 
 .mainFooter {
     width: 100%;
-    height: 10%;
+    height: 10vh;
     text-align: center;
+    padding: 10px 0;
+    font-size: 0.9rem;
+    color: #555;
 }
 
 .calendar {
     display: flex;
     flex-direction: column;
-    /* 세로 방향 정렬 */
-    align-items: center;
-    /* 가로 방향 중앙 정렬 */
-    justify-content: center;
-    /* 세로 방향 중앙 정렬 */
+    align-items: center;       /* 가로 중앙 */
+    justify-content: center;   /* 세로 중앙 */
 }
 
 .calendar table {
-    width: 900px;
-    height: 250px;
-    table-layout: fixed;
-    /* 셀 크기를 균등하게 만듦 */
-    border-collapse: collapse;
-    /* 테두리 겹침 제거 */
+    width: 90vw;               /* 화면 너비의 90%로 */
+    max-width: 900px;          /* 최대 900px */
+    height: auto;              /* 높이는 내용에 따라 조절 */
+    table-layout: fixed;       /* 셀 크기 균등 */
+    border-collapse: collapse; /* 테두리 겹침 제거 */
 }
 
 .calendar th,
 .calendar td {
-    width: calc(900px / 7);
-    /* 7열 균등 분할 */
-    height: calc(250px / 6);
-    /* 최대 6줄(주차) 기준 균등 분할 */
+    width: calc(100% / 7);     /* 7열 균등 분할 */
+    height: calc(250px / 6);   /* 최대 6줄 기준 균등 분할 */
     text-align: center;
     vertical-align: middle;
     border: 1px solid #ccc;
 }
 
-
 .buttonContainer {
     display: flex;
-
 }
 
 .myAnswer {
